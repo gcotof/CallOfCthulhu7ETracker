@@ -15,6 +15,14 @@ center_y = int(screen_height/2 - window_height / 2)
 
 root.geometry(f'{window_width}x{window_height}+{center_x}+{center_y}')
 root.resizable(False, False)
+
+try:
+    photo = tk.PhotoImage(file='./assets/CoCTrackerIcon.png')
+    root.iconphoto(False, photo)
+except tk.TclError:
+    print("icon file not found.")
+
+
 # place a label on the root window
 message = tk.Label(root, text="Hello, World!")
 message.pack()
